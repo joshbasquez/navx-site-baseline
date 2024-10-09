@@ -4,7 +4,6 @@
 // params
 param resourceGroupName string = 'rgPLXNetwork'
 param resourceGroupLocation string = 'eastus'
-
 param plxVnetName string = 'plxVirtualNetwork'
 param plxVnetLocation string = 'eastus'
 param vnetPrefix string = '10.2.0.0/16'
