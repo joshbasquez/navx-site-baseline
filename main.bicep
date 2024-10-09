@@ -1,9 +1,8 @@
 targetScope='subscription'
 
 // params
-param resourceGroupName string = 'rgPLXNetwork4'
+param resourceGroupName string = 'rgPLXNetwork'
 param resourceGroupLocation string = 'eastus'
-
 param plxVnetName string = 'plxVirtualNetwork'
 param plxVnetLocation string = 'eastus'
 param vnetPrefix string = '10.2.0.0/16'
@@ -31,5 +30,16 @@ params: {
   subnet2Name: subnet2Name
   subnet1Prefix: subnet1Prefix
   subnet2Prefix: subnet2Prefix
+  }
+}
+
+module networkSecurityGroup 'networkSecurityGroup.bicep' = {
+  name: 'networkSecurityGroupDeployment'
+  scope: newRG
+  params: {
+    // Required parameters
+    name: 'nsgmain01'
+    // Non-required parameters
+    location: 'eastus'
   }
 }
