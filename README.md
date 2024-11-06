@@ -1,4 +1,4 @@
-# plx site baseline bicep templates
+# navx site baseline bicep templates
 ## configure params in main.bicep
 see // params in main.bicep
 
