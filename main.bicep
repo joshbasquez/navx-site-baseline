@@ -1,11 +1,11 @@
 targetScope='subscription'
 
 // params
-param resourceGroupName string = 'rgPLXNetwork'
+param resourceGroupName string = 'rgnavxNetwork'
 param resourceGroupLocation string = 'eastus'
 
-param plxVnetName string = 'plxVirtualNetwork'
-param plxVnetLocation string = 'eastus'
+param navxVnetName string = 'navxVirtualNetwork'
+param navxVnetLocation string = 'eastus'
 param vnetPrefix string = '10.2.0.0/16'
 param subnet1Name string = 'snet1'
 param subnet2Name string = 'snet2'
@@ -22,12 +22,12 @@ resource newRG 'Microsoft.Resources/resourceGroups@2024-03-01' = {
   location: resourceGroupLocation
 }
 
-module plxVnet 'vnet.bicep' = {
-name: plxVnetName
+module navxVnet 'vnet.bicep' = {
+name: navxVnetName
 scope: newRG
 params: {
-  virtualNetworkName: plxVnetName
-  vnetLocation: plxVnetLocation 
+  virtualNetworkName: navxVnetName
+  vnetLocation: navxVnetLocation 
   vnetPrefix: vnetPrefix 
   subnet1Name: subnet1Name
   subnet2Name: subnet2Name
